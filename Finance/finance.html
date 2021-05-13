@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./finance.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+ 
+  <title>Financing</title>
+</head>
+
+<body>
+  <header>
+    <h2 id="logo">Projeto de Finanças</h2>
+  </header>
+
+  <main class="head" style="margin:5px">
+    <section id="balance">
+      <h2 class="sr">Balanço</h2>
+      <div class="card">
+        <h3>
+          <span>Entradas</span>
+          <img src="./assets/income.svg" alt="income img">
+        </h3>
+        <p id="incomeDisplay">R$0,00</p>
+      </div>
+      <div class="card">
+        <h3>
+          <span>Saídas</span>
+          <img src="./assets/expense.svg" alt="expense png">
+        </h3>
+        <p id="expenseDisplay">R$0,00</p>
+      </div>
+      <div class="card" id="total">
+        <h3>
+          <span>Total</span>
+          <img src="./assets/total.svg" alt="total img">
+        </h3>
+        <p id="totalDisplay">R$0,00</p>
+      </div>
+    </section>
+  </main>
+
+  <main class="container">
+    <section id="transaction">
+      <h2 class="sr">Transações</h2>
+
+      <a href="#" class="button new" onclick="Modal.open()">Nova Transação</a>
+
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <div class="modal-overlay">
+    <div class="modal">
+      <div id="form">
+        <h2>Nova Transação</h2>
+        <form action="" onsubmit="Form.submit(event)">
+          <div class="input-group">
+            <label class="sr" for="description">Descrição</label>
+            <input type="text" id="description" name="description" placeholder="Descrição">
+          </div>
+          <div class="input-group">
+            <label class="sr" for="amount">Descrição</label>
+            <input type="number" step="0.01" id="amount" name="amount" placeholder="R$0,00">
+            <small class="help">Sinal negativo (-) para despesas e vírgula (,) para decimais</small>
+          </div>
+          <div class="input-group">
+              <label class="sr" for="date">Data</label>
+              <input type="date" id="date" name="date">
+          </div>
+          <div class="input-group actions">
+            <a href="#" class="button cancel" onclick="Modal.close()">Cancelar</a>
+            <button type="submit">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://github.com/SovietScott">Github</a>
+  </footer>
+  <script src="./finance.js"></script>
+</body>
+
+</html>
